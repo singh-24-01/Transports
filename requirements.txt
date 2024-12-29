@@ -1,12 +1,9 @@
 streamlit
 pandas
-geopandas
 matplotlib
 pymongo
 streamlit-folium
 folium
 seaborn
 branca
-gdal
-geos
-proj
+geopandas
