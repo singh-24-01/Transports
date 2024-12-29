@@ -11,11 +11,21 @@ import json
 import os
 from branca.colormap import linear
 
+from pymongo import MongoClient
+
+# Connexion à MongoDB Atlas
+client = MongoClient("mongodb+srv://lobby:lobby@velib.5muyg.mongodb.net/?retryWrites=true&w=majority&appName=velib")
+db = client.velib  # Nom de la base de données
+details_collection = db.details  # Collection `details`
+summaries_collection = db.summaries  # Collection `summaries`
+
+
+
 # Connexion à MongoDB
-client = MongoClient("mongodb://127.0.0.1:27017/")
-db = client.velib
-details_collection = db.details
-summaries_collection = db.summaries
+# client = MongoClient("mongodb://127.0.0.1:27017/")
+# db = client.velib
+# details_collection = db.details
+# summaries_collection = db.summaries
 
 # Charger les données
 details_data = pd.DataFrame(list(details_collection.find()))
@@ -84,7 +94,7 @@ if choice == "Générale":
     - 👨‍💻 **NIRMAL Sandeep-Singh**
     - 👩‍💻 **ITAN Chloe**
     - 👩‍💻 **DAOUDI Nour**
-    - 👩‍💻 **LOUNNISSI Manel**
+    - 👩‍💻 **LOUNISSI Manel**
     """)
 
     st.markdown("---")
